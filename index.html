@@ -37,6 +37,35 @@
   --sh:         0 10px 40px -10px rgba(0,0,0,0.08);
 }
 
+[data-theme="dark"] {
+  --bg:         #0a0e14;
+  --bg2:        #111720;
+  --bg3:        #1a2130;
+  --panel:      #1e2a3a;
+  --border:     #253040;
+  --border2:    #344460;
+  --emerald:    #34d399;
+  --em-dim:     rgba(52,211,153,0.10);
+  --gold:       #f5c842;
+  --gold2:      #e8a820;
+  --gold-dim:   rgba(245,200,66,0.11);
+  --moon:       #a5b4fc;
+  --moon-dim:   rgba(165,180,252,0.10);
+  --crimson:    #fb7185;
+  --crim-dim:   rgba(251,113,133,0.10);
+  --sky:        #38bdf8;
+  --sky-dim:    rgba(56,189,248,0.10);
+  --text:       #dde5f0;
+  --text2:      #8fa3bb;
+  --text3:      #4e6075;
+  --white:      #f0f6ff;
+  --sh:         0 4px 32px rgba(0,0,0,0.55);
+}
+[data-theme="dark"] .topbar { background:rgba(10,14,20,0.93)!important; }
+[data-theme="dark"] tbody tr:hover td { background:rgba(255,255,255,0.02)!important; }
+[data-theme="dark"] .bl li,
+[data-theme="dark"] .cmp-card ul li { border-bottom-color:rgba(255,255,255,0.04)!important; }
+
 /* ── RESET ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:16px}
@@ -95,6 +124,8 @@ a{color:var(--sky);text-decoration:none}
 .topbar{position:sticky;top:0;background:rgba(255,255,255,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:40;padding:.6rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:12.5px;margin:0 -2.5rem;}
 .tb-l{color:var(--text3);display:flex;align-items:center;gap:.5rem}
 .tb-l strong{color:var(--text2)}
+.theme-btn{background:var(--bg3);border:1px solid var(--border);border-radius:6px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;color:var(--text);transition:all .2s;}
+.theme-btn:hover{background:var(--em-dim);color:var(--emerald);border-color:var(--emerald);}
 .tb-r{display:flex;align-items:center;gap:.5rem;color:var(--text3)}
 .pbar{height:2px;width:110px;background:var(--border);border-radius:99px;overflow:hidden}
 .pbar-f{height:100%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:99px;width:0%;transition:width .4s ease}
@@ -299,6 +330,7 @@ ol.nl li strong{color:var(--gold)}
   <div class="topbar">
     <div class="tb-l">☾ <strong>Ideology of Pakistan</strong> — BS Economics | University of Malakand</div>
     <div class="tb-r">
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">🌓</button>
       <span id="topPct">0%</span>
       <div class="pbar"><div class="pbar-f" id="topBar"></div></div>
     </div>
@@ -1107,6 +1139,40 @@ function ans(btn,correct,fb){
   f.textContent=(correct?'✅ ':'❌ ')+fb;
   f.className='q-fb show '+(correct?'ok':'fail');
 }
+
+/* ── THEME TOGGLE ── */
+const THEME_KEY = 'pak_ideology_theme';
+const themeToggle = document.getElementById('themeToggle');
+
+function applyTheme(theme) {
+  if(theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.textContent = '☀️';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggle.textContent = '🌙';
+  }
+}
+
+// Check local storage, or fallback to user's system preference
+const savedTheme = localStorage.getItem(THEME_KEY);
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const initialTheme = savedTheme || (systemDark ? 'dark' : 'light');
+applyTheme(initialTheme);
+
+themeToggle.addEventListener('click', () => {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+  applyTheme(newTheme);
+  localStorage.setItem(THEME_KEY, newTheme);
+});
+
+// Listen for system theme changes dynamically
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if(!localStorage.getItem(THEME_KEY)) {
+    applyTheme(e.matches ? 'dark' : 'light');
+  }
+});
 
 /* ── INIT ── */
 load();updateProg();
