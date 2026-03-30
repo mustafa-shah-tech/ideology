@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ideology of Pakistan — BS Economics | University of Malakand</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+/* ── TOKENS ── */
+:root{
+  --bg:         #fafaf9;
+  --bg2:        #ffffff;
+  --bg3:        #f5f5f4;
+  --panel:      #ffffff;
+  --border:     #e7e5e4;
+  --border2:    #d6d3d1;
+  --emerald:    #059669;
+  --em-dim:     #d1fae5;
+  --gold:       #d97706;
+  --gold2:      #b45309;
+  --gold-dim:   #fef3c7;
+  --moon:       #4f46e5;
+  --moon-dim:   #e0e7ff;
+  --crimson:    #e11d48;
+  --crim-dim:   #ffe4e6;
+  --sky:        #0284c7;
+  --sky-dim:    #e0f2fe;
+  --text:       #44403c;
+  --text2:      #78716c;
+  --text3:      #a8a29e;
+  --white:      #1c1917;
+  --serif:      'Cormorant Garamond', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --mono:       'Fira Code', monospace;
+  --r:          10px;
+  --sh:         0 10px 40px -10px rgba(0,0,0,0.08);
+}
+
+/* ── RESET ── */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--serif);background:var(--bg);color:var(--text);line-height:1.9;overflow-x:hidden;}
+a{color:var(--sky);text-decoration:none}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:99px}
+
+/* ── SHELL ── */
+.shell{display:flex;min-height:100vh}
+
+/* ── SIDEBAR ── */
+.sidebar{
+  width:275px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--border);
+  position:sticky;top:0;height:100vh;overflow-y:auto;padding:0 0 2rem;
+  display:flex;flex-direction:column;z-index:50;
+}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar-logo{padding:1.5rem 1.4rem 1.1rem;border-bottom:1px solid var(--border);}
+.course-badge{display:inline-flex;align-items:center;gap:0.4rem;font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--emerald);background:var(--em-dim);padding:3px 9px;border-radius:4px;margin-bottom:0.7rem;}
+.sidebar-logo h1{font-family:var(--sans);font-size:0.92rem;font-weight:700;color:var(--white);line-height:1.35;}
+.sidebar-logo p{font-size:11px;color:var(--text3);font-family:var(--sans);margin-top:3px;}
+
+.progress-wrap{padding:1rem 1.4rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:1rem;}
+.progress-wrap svg{flex-shrink:0}
+.r-track{fill:none;stroke:var(--border2);stroke-width:3}
+.r-fill{fill:none;stroke:var(--emerald);stroke-width:3;stroke-linecap:round;stroke-dasharray:100.53;stroke-dashoffset:100.53;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .6s ease;}
+.r-txt{font-family:var(--sans);font-size:9.5px;fill:var(--emerald);font-weight:700;text-anchor:middle;dominant-baseline:middle}
+.prog-info{flex:1}
+.prog-info .prog-lbl{font-family:var(--sans);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3)}
+.prog-info .prog-cnt{font-family:var(--sans);font-size:1.05rem;font-weight:700;color:var(--white)}
+
+.nav-group{padding:0.85rem 1.4rem 0.3rem}
+.nav-group-label{font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:0.5rem;}
+.nav-item{display:flex;align-items:center;gap:0.6rem;padding:0.42rem 0.65rem;border-radius:7px;cursor:pointer;font-family:var(--sans);font-size:12.5px;color:var(--text2);transition:all .2s;margin-bottom:2px;line-height:1.3;}
+.nav-item:hover{background:var(--bg3);color:var(--white)}
+.nav-item.active{background:var(--em-dim);color:var(--emerald)}
+.nav-item.done .dot{background:var(--emerald)!important}
+.nav-item.active .dot{background:var(--emerald);box-shadow:0 0 6px var(--emerald)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border2);flex-shrink:0;transition:all .2s;}
+
+/* ── HAMBURGER ── */
+.hamburger{display:none;position:fixed;top:.75rem;left:.75rem;z-index:200;background:var(--bg2);border:1px solid var(--border2);border-radius:8px;padding:.45rem .55rem;cursor:pointer;flex-direction:column;gap:4px;}
+.hamburger span{display:block;width:20px;height:2px;background:var(--text2);border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99;opacity:0;transition:opacity .3s;pointer-events:none;}
+.overlay.vis{opacity:1;pointer-events:all}
+
+/* ── MAIN ── */
+.main{flex:1;min-width:0;max-width:875px;margin:0 auto;padding:0 2.5rem 7rem}
+
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;background:rgba(255,255,255,0.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:40;padding:.6rem 2.5rem;display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-size:12.5px;margin:0 -2.5rem;}
+.tb-l{color:var(--text3);display:flex;align-items:center;gap:.5rem}
+.tb-l strong{color:var(--text2)}
+.tb-r{display:flex;align-items:center;gap:.5rem;color:var(--text3)}
+.pbar{height:2px;width:110px;background:var(--border);border-radius:99px;overflow:hidden}
+.pbar-f{height:100%;background:linear-gradient(90deg,var(--emerald),var(--gold));border-radius:99px;width:0%;transition:width .4s ease}
+
+/* ── HERO ── */
+.hero{padding:4.5rem 0 3rem;position:relative}
+.hero::before{content:'';position:absolute;top:0;left:-2.5rem;right:-2.5rem;height:3px;background:linear-gradient(90deg,transparent,var(--emerald),var(--gold),transparent)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--emerald);margin-bottom:1.2rem}
+.hero-eyebrow span{width:22px;height:1px;background:var(--emerald)}
+.hero h1{font-size:clamp(2.4rem,5.5vw,4rem);font-weight:600;line-height:1.08;color:var(--white);margin-bottom:.9rem;letter-spacing:-.5px}
+.hero h1 em{font-style:italic;background:linear-gradient(90deg,var(--gold),var(--emerald));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-family:var(--sans);font-size:1rem;color:var(--text2);max-width:560px;line-height:1.75;margin-bottom:2rem}
+.pills{display:flex;gap:1rem;flex-wrap:wrap}
+.pill{display:flex;align-items:center;gap:.45rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:.45rem .9rem;font-family:var(--sans);font-size:12.5px;color:var(--text2)}
+.pill strong{color:var(--white)}
+
+/* ── CHAPTER HEADER ── */
+.ch{margin:4rem 0 2rem;padding:2rem 2rem 1.7rem;background:var(--bg2);border:1px solid var(--border);border-radius:14px;position:relative;overflow:hidden}
+.ch::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--em-dim),transparent 55%);pointer-events:none}
+.ch-num{font-family:var(--mono);font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--emerald);margin-bottom:.5rem}
+.ch h2{font-family:var(--sans);font-size:1.75rem;font-weight:800;color:var(--white);margin-bottom:.55rem}
+.ch-desc{font-family:var(--sans);font-size:.9rem;color:var(--text2)}
+
+/* ── TOPIC ── */
+.topic{margin:2.5rem 0;opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.topic.vis{opacity:1;transform:none}
+.topic-hd{display:flex;align-items:center;gap:.7rem;margin-bottom:1rem}
+.topic-hd h3{font-family:var(--sans);font-size:1.2rem;font-weight:700;color:var(--white)}
+.marker{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.m-em{background:var(--em-dim);border:1px solid var(--emerald)}
+.m-gold{background:var(--gold-dim);border:1px solid var(--gold)}
+.m-moon{background:var(--moon-dim);border:1px solid var(--moon)}
+.m-sky{background:var(--sky-dim);border:1px solid var(--sky)}
+.check-btn{margin-left:auto;width:26px;height:26px;border-radius:50%;border:2px solid var(--border2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s;flex-shrink:0;color:transparent}
+.check-btn:hover{border-color:var(--emerald);background:var(--em-dim)}
+.check-btn.checked{border-color:var(--emerald);background:var(--emerald);color:var(--bg)}
+
+p{margin-bottom:.9rem;font-size:.97rem;color:var(--text);line-height:1.9}
+
+/* ── CALLOUT BOXES ── */
+.box{border-radius:var(--r);padding:1.2rem 1.4rem;margin:1.3rem 0;border-left:4px solid}
+.box-lbl{font-family:var(--sans);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:.45rem;display:flex;align-items:center;gap:.4rem}
+.box p,.box ul,.box ol{margin:0;font-size:.92rem}
+.box.def{background:var(--gold-dim);border-color:var(--gold)}
+.box.def .box-lbl{color:var(--gold)}
+.box.eg{background:var(--em-dim);border-color:var(--emerald)}
+.box.eg .box-lbl{color:var(--emerald)}
+.box.exam{background:var(--crim-dim);border-color:var(--crimson)}
+.box.exam .box-lbl{color:var(--crimson)}
+.box.note{background:var(--moon-dim);border-color:var(--moon)}
+.box.note .box-lbl{color:var(--moon)}
+.box.key{background:var(--sky-dim);border-color:var(--sky)}
+.box.key .box-lbl{color:var(--sky)}
+
+/* ── FORMULA BLOCK ── */
+.fml{background:var(--bg);border:1px solid var(--border2);border-radius:var(--r);margin:1.3rem 0;overflow:hidden}
+.fml-head{background:var(--bg3);padding:.5rem 1rem;font-family:var(--sans);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border)}
+.fml-body{padding:1.2rem 1.5rem;font-family:var(--mono);font-size:.9rem;color:var(--gold);line-height:2.3}
+.fml-note{font-size:.78rem;color:var(--text2);font-family:var(--sans);margin-top:.3rem;line-height:1.6}
+
+/* ── TABLE ── */
+.tbl{overflow-x:auto;margin:1.3rem 0;border-radius:var(--r);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--bg3)}
+thead th{padding:.75rem 1rem;font-family:var(--sans);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text2);text-align:left;border-bottom:1px solid var(--border)}
+tbody td{padding:.7rem 1rem;font-size:.88rem;border-bottom:1px solid var(--border);color:var(--text);font-family:var(--sans);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(0,0,0,0.02)}
+
+/* ── LIST ── */
+.bl{list-style:none;padding:0;margin:.8rem 0 1rem}
+.bl li{padding:.35rem 0 .35rem 1.6rem;position:relative;font-size:.93rem;color:var(--text);border-bottom:1px solid rgba(0,0,0,0.04)}
+.bl li:last-child{border-bottom:none}
+.bl li::before{content:'◆';color:var(--emerald);font-size:7px;position:absolute;left:2px;top:.65rem}
+ol.nl{padding-left:1.4rem;margin:.8rem 0 1rem}
+ol.nl li{padding:.3rem 0 .3rem .3rem;font-size:.93rem;color:var(--text);margin-bottom:.25rem}
+ol.nl li strong{color:var(--gold)}
+
+/* ── TIMELINE ── */
+.timeline{position:relative;padding:0;margin:1.5rem 0;list-style:none}
+.timeline::before{content:'';position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--emerald),var(--gold))}
+.tl-item{display:flex;gap:1.2rem;align-items:flex-start;margin-bottom:1.5rem;position:relative}
+.tl-dot{width:30px;height:30px;border-radius:50%;border:2px solid var(--emerald);background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--sans);font-size:10px;font-weight:700;color:var(--emerald);margin-top:.1rem}
+.tl-content{flex:1;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.2rem}
+.tl-year{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--gold);margin-bottom:.3rem}
+.tl-title{font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:.4rem}
+.tl-desc{font-family:var(--sans);font-size:.85rem;color:var(--text2);line-height:1.6}
+
+/* ── COMPARISON GRID ── */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.3rem 0}
+.cmp-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.3rem}
+.cmp-card h4{font-family:var(--sans);font-weight:700;font-size:.9rem;margin-bottom:.7rem}
+.cmp-card ul{list-style:none;padding:0}
+.cmp-card ul li{font-family:var(--sans);font-size:.83rem;color:var(--text2);padding:.25rem 0 .25rem 1.2rem;position:relative;border-bottom:1px solid rgba(0,0,0,0.04)}
+.cmp-card ul li:last-child{border-bottom:none}
+.cmp-card ul li::before{content:'•';position:absolute;left:2px;color:inherit}
+.cmp-em{border-color:var(--emerald)}
+.cmp-em h4{color:var(--emerald)}
+.cmp-em ul li::before{color:var(--emerald)}
+.cmp-gold{border-color:var(--gold)}
+.cmp-gold h4{color:var(--gold)}
+.cmp-gold ul li::before{color:var(--gold)}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent);margin:3.5rem 0}
+
+/* ── MINI QUIZ ── */
+.quiz{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.6rem;margin-top:2rem}
+.quiz h4{font-family:var(--sans);font-size:1.05rem;color:var(--gold);margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem}
+.quiz-q{margin-bottom:1.6rem}
+.quiz-q:last-child{margin-bottom:0}
+.q-txt{font-family:var(--sans);font-size:.93rem;color:var(--white);margin-bottom:.75rem;font-weight:500}
+.opts{display:flex;flex-direction:column;gap:.45rem}
+.opt{background:var(--bg3);border:1px solid var(--border2);border-radius:7px;padding:.6rem 1rem;font-family:var(--sans);font-size:.88rem;color:var(--text);cursor:pointer;text-align:left;transition:all .2s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--emerald);background:var(--em-dim)}
+.opt.correct{border-color:var(--emerald)!important;background:var(--em-dim)!important;color:var(--emerald)!important}
+.opt.wrong{border-color:var(--crimson)!important;background:var(--crim-dim)!important;color:var(--crimson)!important}
+.opt:disabled{cursor:default}
+.q-fb{font-family:var(--sans);font-size:.83rem;margin-top:.5rem;padding:.6rem .9rem;border-radius:6px;display:none}
+.q-fb.show{display:block}
+.q-fb.ok{background:var(--em-dim);color:var(--emerald);border:1px solid rgba(52,211,153,.2)}
+.q-fb.fail{background:var(--crim-dim);color:var(--crimson);border:1px solid rgba(251,113,133,.2)}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:2.5rem 0 1rem;border-top:1px solid var(--border);font-family:var(--sans);font-size:.8rem;color:var(--text3);margin-top:2rem}
+.footer strong{color:var(--text2)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .overlay{display:block}
+  .sidebar{position:fixed;top:0;left:0;height:100vh;z-index:100;transform:translateX(-100%);transition:transform .3s ease}
+  .sidebar.open{transform:translateX(0)}
+  .shell{display:block}
+  .main{padding:0 1rem 5rem;max-width:100%}
+  .topbar{padding:.6rem 1rem .6rem 3.5rem;margin:0}
+  .hero{padding:3rem 0 2rem}
+  .hero h1{font-size:clamp(1.9rem,7vw,2.8rem)}
+  .cmp{grid-template-columns:1fr}
+  .ch{padding:1.4rem 1.2rem}
+  .ch h2{font-size:1.3rem}
+  .pills{gap:.6rem}
+  .pill{font-size:11.5px}
+}
+@media(max-width:480px){
+  .hero h1{font-size:1.75rem}
+  .pills{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<button class="hamburger" id="hamburger" aria-label="Toggle sidebar">
+  <span></span><span></span><span></span>
+</button>
+<div class="overlay" id="overlay"></div>
+
+<div class="shell">
+
+<!-- ═══ SIDEBAR ═══ -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <h1>Ideology of Pakistan</h1>
+    <p>BS Economics · University of Malakand</p>
+  </div>
+
+  <div class="progress-wrap">
+    <svg width="44" height="44" viewBox="0 0 44 44">
+      <circle class="r-track" cx="22" cy="22" r="16"/>
+      <circle class="r-fill" id="rFill" cx="22" cy="22" r="16"/>
+      <text class="r-txt" id="rPct" x="22" y="22">0%</text>
+    </svg>
+    <div class="prog-info">
+      <div class="prog-lbl">Progress</div>
+      <div class="prog-cnt"><span id="doneN">0</span> / <span id="totalN">0</span> topics</div>
+    </div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Part I — Theoretical Framework</div>
+    <div class="nav-item" data-target="t1-1"><div class="dot"></div>Definition of Ideology</div>
+    <div class="nav-item" data-target="t1-2"><div class="dot"></div>Sources of Ideology</div>
+    <div class="nav-item" data-target="t1-3"><div class="dot"></div>Importance of Ideology</div>
+    <div class="nav-item" data-target="t1-4"><div class="dot"></div>Basic Components</div>
+    <div class="nav-item" data-target="t1-5"><div class="dot"></div>Characteristics</div>
+    <div class="nav-item" data-target="t1-6"><div class="dot"></div>Significance of Ideology</div>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Part II — Historical Context</div>
+    <div class="nav-item" data-target="t2-1"><div class="dot"></div>Two-Nation Theory</div>
+    <div class="nav-item" data-target="t2-2"><div class="dot"></div>Partition of Bengal (1905)</div>
+    <div class="nav-item" data-target="t2-3"><div class="dot"></div>Pakistan Resolution (1940)</div>
+    <div class="nav-item" data-target="t2-4"><div class="dot"></div>Simla Deputation (1906)</div>
+    <div class="nav-item" data-target="t2-5"><div class="dot"></div>Establishment of AIML</div>
+  </div>
+</aside>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main">
+
+  <div class="topbar">
+    <div class="tb-l">☾ <strong>Ideology of Pakistan</strong> — BS Economics | University of Malakand</div>
+    <div class="tb-r">
+      <span id="topPct">0%</span>
+      <div class="pbar"><div class="pbar-f" id="topBar"></div></div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-eyebrow"><span></span>Interactive Study Guide<span></span></div>
+    <h1>Ideology of<br><em>Pakistan</em></h1>
+    <p class="hero-sub">From abstract political theory to the concrete historical events that forged a nation — master every concept your exam demands, step by step.</p>
+    <div class="pills">
+      <div class="pill">📖 <strong>2</strong>&nbsp;Parts</div>
+      <div class="pill">📝 <strong>11</strong>&nbsp;Topics</div>
+      <div class="pill">🧪 Mini-Quizzes Included</div>
+      <div class="pill">⭐ Exam Alerts Marked</div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       CHAPTER 1 — THEORETICAL FRAMEWORK
+  ══════════════════════════════════════════ -->
+  <div class="ch">
+    <div class="ch-num">Part I of II</div>
+    <h2>Theoretical Framework of Ideology</h2>
+    <p class="ch-desc">Understand what ideology means, where it comes from, and why it holds a nation together — the foundation you need before studying history.</p>
+  </div>
+
+  <!-- T1-1: Definition -->
+  <section class="topic" id="t1-1">
+    <div class="topic-hd">
+      <div class="marker m-em">💡</div>
+      <h3>Definition of Ideology</h3>
+      <button class="check-btn" onclick="done(this,'t1-1')">✓</button>
+    </div>
+
+    <p>Let's start with the simplest possible version: <strong>An ideology is a set of shared beliefs and values that tell a group of people how the world is, and how it <em>should</em> be.</strong> It is the "thinking engine" of a society.</p>
+
+    <div class="box def">
+      <div class="box-lbl">📖 Academic Definition</div>
+      <p>Ideology is a <strong>systematic body of ideas, beliefs, and values</strong> that guides the political, social, economic, and moral conduct of a group, movement, or nation. It provides a framework through which people interpret reality and set collective goals.</p>
+    </div>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Real-Life Pakistan Example</div>
+      <p>When Muslims in British India said <em>"We are a separate nation from Hindus and we need our own homeland governed by Islamic principles"</em> — that shared belief <strong>was</strong> their ideology. It guided all their political decisions for decades until Pakistan was achieved in 1947.</p>
+    </div>
+
+    <p>The word "ideology" was coined by French philosopher <strong>Destutt de Tracy</strong> in 1796. He meant it as the "science of ideas." Over time, it came to mean the political and social belief systems that motivate groups and nations.</p>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Exam Focus</div>
+      <p>Examiners love to ask: <em>"Define ideology"</em> or <em>"What is meant by the ideology of Pakistan?"</em> Always include: (1) a clear definition, (2) that it is based on Islam, and (3) that it was the basis for the creation of Pakistan.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Ideology provides a nation with:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'No — a military plan is strategy, not ideology.')">A. A detailed military plan.</button>
+          <button class="opt" onclick="ans(this,true,'Exactly! Ideology is the shared body of beliefs that guides a nation\'s direction and goals.')">B. A shared framework of beliefs and values that guide its direction.</button>
+          <button class="opt" onclick="ans(this,false,'Financial plans are economic policy, not ideology.')">C. A financial budget for the year.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. Who coined the term "ideology"?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Karl Marx used the term extensively but did not coin it.')">A. Karl Marx</button>
+          <button class="opt" onclick="ans(this,true,'Correct! Destutt de Tracy coined the term in 1796, meaning the science of ideas.')">B. Destutt de Tracy</button>
+          <button class="opt" onclick="ans(this,false,'John Locke predates the term\'s coinage.')">C. John Locke</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T1-2: Sources -->
+  <section class="topic" id="t1-2">
+    <div class="topic-hd">
+      <div class="marker m-gold">🌱</div>
+      <h3>Sources of Ideology</h3>
+      <button class="check-btn" onclick="done(this,'t1-2')">✓</button>
+    </div>
+
+    <p>Where does an ideology come from? It doesn't appear from nowhere — it is shaped by several powerful forces operating over time.</p>
+
+    <div class="box note">
+      <div class="box-lbl">💡 Key Insight</div>
+      <p>For the <strong>Ideology of Pakistan</strong> specifically, Islam is the <em>primary and overriding source</em>. Every other source flows from or is shaped by Islamic principles.</p>
+    </div>
+
+    <ol class="nl">
+      <li><strong>Religion (Islam):</strong> The most fundamental source. Islam provides a complete way of life — politics, economics, social relations, justice. The ideology of Pakistan is rooted in the belief that Muslims must live under Islamic law. The Quran and Sunnah are the supreme guides.</li>
+      <li><strong>History &amp; Culture:</strong> Shared historical experiences — like centuries of Muslim civilization in the subcontinent, the Mughal Empire, and the collective memory of Muslim unity — shaped the ideology.</li>
+      <li><strong>Leadership &amp; Intellectuals:</strong> Visionary thinkers like <strong>Sir Syed Ahmad Khan</strong> (Muslim modernism), <strong>Allama Iqbal</strong> (philosophical foundation), and <strong>Quaid-e-Azam</strong> (political execution) gave ideological shape to Muslim aspirations.</li>
+      <li><strong>Social &amp; Political Experiences:</strong> Living under British colonialism and the fear of being a permanent Hindu-majority-dominated minority made Muslims develop a distinct political ideology — the need for a separate homeland.</li>
+      <li><strong>Geographic &amp; Economic Conditions:</strong> The concentration of Muslims in specific regions (Punjab, Bengal, Sindh, NWFP) and economic marginalization also contributed to a distinct collective identity.</li>
+    </ol>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Analogy</div>
+      <p>Think of ideology like a river. <strong>Religion is the source (mountain spring)</strong> — pure and powerful. History and culture are the tributaries that join in. Leadership is like the dam that channels the water. Together they form the mighty river of ideology that shapes a nation's direction.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. What is the primary source of Pakistan's ideology?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'British political theories were actually what Pakistan\'s founders were working against.')">A. British political theories</button>
+          <button class="opt" onclick="ans(this,true,'Correct! Islam is the foundational, overriding source of Pakistan\'s ideology.')">B. Islam (Quran and Sunnah)</button>
+          <button class="opt" onclick="ans(this,false,'Western democracy is not the primary source of Pakistan\'s ideological foundation.')">C. Western democracy</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. Which great thinker gave Pakistan's ideology its philosophical foundation?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Sir Syed contributed to Muslim modernism and education, not the philosophical vision of a separate state.')">A. Sir Syed Ahmad Khan</button>
+          <button class="opt" onclick="ans(this,true,'Correct! Allama Iqbal provided the philosophical and spiritual vision of a separate Muslim homeland.')">B. Allama Iqbal</button>
+          <button class="opt" onclick="ans(this,false,'Liaquat Ali Khan was the first Prime Minister — a political executor, not the philosophical founder.')">C. Liaquat Ali Khan</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T1-3: Importance -->
+  <section class="topic" id="t1-3">
+    <div class="topic-hd">
+      <div class="marker m-sky">⭐</div>
+      <h3>Importance of Ideology</h3>
+      <button class="check-btn" onclick="done(this,'t1-3')">✓</button>
+    </div>
+
+    <p>Why does a nation <em>need</em> an ideology? Can't it just exist without one? The answer is: a nation without ideology is like a ship without a compass — it drifts, divides, and eventually sinks. Here is why ideology is indispensable:</p>
+
+    <ul class="bl">
+      <li><strong>National Unity:</strong> Ideology binds diverse people with different languages, cultures, and ethnicities into a single united nation. Without the shared ideology of Islam, Punjabis, Sindhis, Balochis, and Pashtuns would have little in common.</li>
+      <li><strong>Direction &amp; Purpose:</strong> It tells the nation <em>where</em> it is going and <em>why</em>. Pakistan's ideology gives clear direction: an Islamic state where Muslims can practice their faith freely.</li>
+      <li><strong>Justification for Existence:</strong> Pakistan came into being <em>because of</em> its ideology (the Two-Nation Theory). Without it, the very rationale for the country's creation disappears.</li>
+      <li><strong>Policy Framework:</strong> All laws, policies, and governance decisions should ideally be guided by the ideology (e.g., Islamic banking, family laws, educational curriculum in Pakistan).</li>
+      <li><strong>Resistance to External Threats:</strong> A strong ideology gives people the will to resist cultural imperialism and foreign domination. It preserves identity.</li>
+      <li><strong>Social Order &amp; Moral Code:</strong> Ideology sets the moral boundaries of acceptable behavior for both citizens and rulers, reducing corruption and injustice.</li>
+    </ul>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Exam Tip — "What happens without ideology?"</div>
+      <p>A brilliant exam answer will not only list the importance of ideology but will contrast it with what happens in its absence: national disintegration, identity crisis, policy confusion, and vulnerability to foreign manipulation. This is why the separation of East Pakistan in 1971 is sometimes cited as a consequence of forgetting Pakistan's ideology.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. The most fundamental role of ideology for Pakistan is:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Economic growth is a policy goal, not a role of ideology specifically.')">A. Ensuring rapid economic growth.</button>
+          <button class="opt" onclick="ans(this,true,'Exactly right! Pakistan\'s very reason for existing is its ideology — the Two-Nation Theory and Islamic basis.')">B. Justifying the country's creation and providing national unity.</button>
+          <button class="opt" onclick="ans(this,false,'Military strength is one aspect, but not the foundational role of ideology.')">C. Building the world's most powerful military.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T1-4: Components -->
+  <section class="topic" id="t1-4">
+    <div class="topic-hd">
+      <div class="marker m-moon">🧩</div>
+      <h3>Basic Components of Ideology</h3>
+      <button class="check-btn" onclick="done(this,'t1-4')">✓</button>
+    </div>
+
+    <p>An ideology is not just one idea — it is a complex system made up of several interconnected components working together. Think of them as the building blocks of any ideology.</p>
+
+    <div class="tbl">
+      <table>
+        <thead><tr><th>Component</th><th>What It Means</th><th>In Pakistan's Context</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Cognitive Element</strong></td><td>A set of beliefs about how the world <em>is</em> (facts, reality)</td><td>Muslims are a distinct nation with unique civilization, culture, and religion</td></tr>
+          <tr><td><strong>Evaluative Element</strong></td><td>Values about what is <em>good</em> or <em>bad</em>, right or wrong</td><td>Islamic justice, equality, brotherhood are supreme values; exploitation is wrong</td></tr>
+          <tr><td><strong>Normative Element</strong></td><td>Norms and rules about how people <em>should</em> behave</td><td>Citizens should follow Islamic law; rulers must be accountable to God and people</td></tr>
+          <tr><td><strong>Programmatic Element</strong></td><td>A plan of action to change the world in line with the ideology</td><td>The political struggle for Pakistan; later, framing an Islamic constitution</td></tr>
+          <tr><td><strong>Social Base</strong></td><td>The group of people who hold and spread the ideology</td><td>The Muslim community of the subcontinent (Ummah)</td></tr>
+          <tr><td><strong>Rhetorical Element</strong></td><td>The language, symbols, and slogans used to spread the ideology</td><td><em>"Pakistan ka matlab kya? La ilaha illallah"</em> — rallying cry of the independence movement</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Simple Analogy</div>
+      <p>Think of an ideology like a <strong>recipe</strong>. The cognitive element is knowing what ingredients exist. The evaluative element decides which ingredients taste good. The normative element specifies the proper measurements. The programmatic element is the actual cooking process. The social base is the family that cooks and eats together. The rhetorical element is the name you give the dish to make everyone want it!</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Which component of ideology provides the "plan of action" to achieve the ideology's goals?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'The cognitive element is about beliefs regarding reality, not action plans.')">A. Cognitive Element</button>
+          <button class="opt" onclick="ans(this,false,'Evaluative is about values — what is good or bad.')">B. Evaluative Element</button>
+          <button class="opt" onclick="ans(this,true,'Correct! The Programmatic Element is the action plan — in Pakistan\'s case, the political struggle for independence.')">C. Programmatic Element</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. "Pakistan ka matlab kya? La ilaha illallah" is an example of which component?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Normative element is about behavioural norms, not slogans.')">A. Normative Element</button>
+          <button class="opt" onclick="ans(this,true,'Correct! It is a slogan (rhetorical element) used to spread and inspire the ideology.')">B. Rhetorical Element</button>
+          <button class="opt" onclick="ans(this,false,'Social base refers to the group of people, not the slogans they use.')">C. Social Base</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T1-5: Characteristics -->
+  <section class="topic" id="t1-5">
+    <div class="topic-hd">
+      <div class="marker m-em">🔬</div>
+      <h3>Characteristics of Ideology</h3>
+      <button class="check-btn" onclick="done(this,'t1-5')">✓</button>
+    </div>
+
+    <p>Not every collection of beliefs qualifies as a proper ideology. A true ideology has specific characteristics that set it apart from mere opinions or passing trends.</p>
+
+    <ol class="nl">
+      <li><strong>Comprehensiveness:</strong> A true ideology covers all major aspects of life — politics, economics, society, morality, law. Islam is comprehensive in exactly this way (Din is a complete code of life).</li>
+      <li><strong>Internal Consistency:</strong> The beliefs within an ideology do not contradict each other. They form a logically connected whole.</li>
+      <li><strong>Action-Oriented:</strong> Ideology is not just theoretical. It motivates people to act — to fight for independence, to vote, to build institutions.</li>
+      <li><strong>Historically Rooted:</strong> It draws on the past — shared history, suffering, and achievements — to justify the present and motivate the future.</li>
+      <li><strong>Emotionally Engaging:</strong> Ideology speaks not just to reason but to the heart. It creates passion, sacrifice, and devotion (e.g., people dying for Pakistan in 1947).</li>
+      <li><strong>Persistent &amp; Durable:</strong> A real ideology survives across generations. Pakistan's ideology has persisted since 1947 and continues to shape the nation.</li>
+      <li><strong>Exclusive &amp; Identity-Forming:</strong> It creates a clear "we" (Muslims) vs "others" distinction that solidifies group identity.</li>
+      <li><strong>Adaptable:</strong> While the core remains unchanged (Islamic principles), the application of ideology must adapt to changing times and challenges.</li>
+    </ol>
+
+    <div class="box key">
+      <div class="box-lbl">🔵 Memory Tip — "CAHEP-DA"</div>
+      <p><strong>C</strong>omprehensive · <strong>A</strong>ction-oriented · <strong>H</strong>istorically rooted · <strong>E</strong>motionally engaging · <strong>P</strong>ersistent · <strong>D</strong>urable · <strong>A</strong>daptable. Make a sentence: <em>"Can An Honest Egyptian Prince Develop Ambitions?"</em></p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Pakistan's ideology has survived 75+ years through wars, political crises, and social change. This demonstrates which characteristic?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Action-oriented refers to ideology motivating people to act, not its long-term survival.')">A. Action-Oriented</button>
+          <button class="opt" onclick="ans(this,true,'Perfect! Surviving across generations and challenges is the hallmark of a Persistent & Durable ideology.')">B. Persistent &amp; Durable</button>
+          <button class="opt" onclick="ans(this,false,'Internal consistency refers to the logical coherence of the ideology\'s beliefs, not its longevity.')">C. Internal Consistency</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T1-6: Significance -->
+  <section class="topic" id="t1-6">
+    <div class="topic-hd">
+      <div class="marker m-gold">🌟</div>
+      <h3>Significance of the Ideology of Pakistan</h3>
+      <button class="check-btn" onclick="done(this,'t1-6')">✓</button>
+    </div>
+
+    <p>The Ideology of Pakistan is not just an academic concept — it is the <em>lifeblood</em> of the nation. Its significance can be understood at multiple levels:</p>
+
+    <div class="cmp">
+      <div class="cmp-card cmp-em">
+        <h4>🏛️ Political Significance</h4>
+        <ul>
+          <li>Provided the legal and moral basis for demanding a separate state</li>
+          <li>Guided the framing of Pakistan's constitution (Islamic Republic)</li>
+          <li>Shapes all matters of governance and legislation</li>
+          <li>Justifies Pakistan's existence as a sovereign state</li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-gold">
+        <h4>🤝 Social Significance</h4>
+        <ul>
+          <li>Creates national unity among ethnically diverse groups</li>
+          <li>Provides a common moral code for society</li>
+          <li>Promotes Islamic values of brotherhood and equality</li>
+          <li>Gives citizens a shared identity beyond ethnicity</li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-em">
+        <h4>📚 Cultural Significance</h4>
+        <ul>
+          <li>Preserves Islamic cultural heritage in the subcontinent</li>
+          <li>Protects Muslim language (Urdu) and traditions</li>
+          <li>Shapes Pakistan's educational curriculum and arts</li>
+          <li>Provides resistance against cultural imperialism</li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-gold">
+        <h4>🌍 International Significance</h4>
+        <ul>
+          <li>Positions Pakistan as a leader of the Muslim world</li>
+          <li>Basis for solidarity with Muslim nations (OIC membership)</li>
+          <li>Gives Pakistan a distinct international identity</li>
+          <li>Motivates support for Muslim causes globally (Kashmir, Palestine)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Exam Gold Mine</div>
+      <p>Questions about significance often ask: <em>"Discuss the significance of Pakistan's ideology in the light of present-day challenges."</em> Great answers link historical significance to current threats: sectarianism, terrorism, identity crisis among youth, and Western cultural influence. The ideology is the answer to all of these.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Without its ideology, Pakistan would lose:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Geographic location does not depend on ideology.')">A. Its geographic location.</button>
+          <button class="opt" onclick="ans(this,true,'Exactly! The ideology IS the reason Pakistan was created. Without it, the state\'s entire justification collapses.')">B. Its very reason for existence and national unity.</button>
+          <button class="opt" onclick="ans(this,false,'Natural resources are independent of ideology.')">C. Its natural resources.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══════════════════════════════════════
+       CHAPTER 2 — HISTORICAL CONTEXT
+  ══════════════════════════════════════════ -->
+  <div class="ch">
+    <div class="ch-num">Part II of II</div>
+    <h2>Historical Context: From Theory to Nation</h2>
+    <p class="ch-desc">Trace the journey from Muslim political awakening to the birth of Pakistan through five landmark historical events.</p>
+  </div>
+
+  <!-- T2-1: Two-Nation Theory -->
+  <section class="topic" id="t2-1">
+    <div class="topic-hd">
+      <div class="marker m-em">🕌</div>
+      <h3>The Two-Nation Theory</h3>
+      <button class="check-btn" onclick="done(this,'t2-1')">✓</button>
+    </div>
+
+    <p>The Two-Nation Theory is the <strong>single most important ideological concept</strong> for understanding Pakistan's creation. It is the direct application of Pakistan's ideology to political reality.</p>
+
+    <div class="box def">
+      <div class="box-lbl">📖 The Two-Nation Theory — Core Statement</div>
+      <p>Muslims and Hindus in the subcontinent are not merely two religious communities — they are <strong>two distinct nations</strong>, fundamentally different in religion, culture, civilization, history, and social order. Therefore, they cannot live under a single democratic government in which Hindus would always dominate by majority, and they must have separate homelands.</p>
+    </div>
+
+    <h4 style="color:var(--gold);font-family:var(--sans);font-size:1rem;margin:1.4rem 0 .6rem">📜 Evolution of the Theory — Key Thinkers</h4>
+
+    <div class="timeline">
+      <li class="tl-item">
+        <div class="tl-dot">1</div>
+        <div class="tl-content">
+          <div class="tl-year">1857 — Aftermath of War of Independence</div>
+          <div class="tl-title">Sir Syed Ahmad Khan — Seeds of Separate Identity</div>
+          <div class="tl-desc">After the failure of 1857, Sir Syed recognized that Muslims needed modern education to survive and that Hindu-Muslim cooperation in a single nation would disadvantage Muslims. He began laying the intellectual groundwork for a separate Muslim identity and identity in South Asian politics.</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-content">
+          <div class="tl-year">1930 — Allahabad Address</div>
+          <div class="tl-title">Allama Iqbal — The Philosophical Vision</div>
+          <div class="tl-desc">In his historic presidential address to the Muslim League, Iqbal said: <em>"I would like to see the Punjab, NWFP, Sindh, and Balochistan amalgamated into a single state."</em> He gave the Two-Nation Theory its philosophical and spiritual depth — Muslims need a state to fully realize Islamic civilization.</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-dot">3</div>
+        <div class="tl-content">
+          <div class="tl-year">1940 — Lahore (Pakistan) Resolution</div>
+          <div class="tl-title">Quaid-e-Azam — Political Execution</div>
+          <div class="tl-desc">Quaid-e-Azam Mohammad Ali Jinnah translated the theory into a political demand. He declared: <em>"Hindus and Muslims belong to two different religious philosophies, social customs, and literatures. They neither intermarry nor interdine together... They are, in fact, different civilizations."</em></div>
+        </div>
+      </li>
+    </div>
+
+    <h4 style="color:var(--emerald);font-family:var(--sans);font-size:1rem;margin:1.4rem 0 .6rem">⚖️ Differences Between Hindus and Muslims (Basis of the Theory)</h4>
+    <div class="cmp">
+      <div class="cmp-card cmp-em">
+        <h4>Muslims</h4>
+        <ul>
+          <li>Monotheistic — believe in one God (Allah)</li>
+          <li>No caste system — all Muslims are equal before God</li>
+          <li>Quran and Sunnah as supreme law</li>
+          <li>Urdu as lingua franca and literary tradition</li>
+          <li>Distinct mosques, call to prayer, Islamic calendar</li>
+          <li>Cow is permissible to eat; music/idol worship discouraged</li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-gold">
+        <h4>Hindus (Contrast)</h4>
+        <ul>
+          <li>Polytheistic — many gods and goddesses</li>
+          <li>Rigid caste system (Brahmin to Untouchable)</li>
+          <li>Vedas, Manusmriti as religious texts</li>
+          <li>Hindi and Sanskrit as literary tradition</li>
+          <li>Temples, bells, religious festivals differ completely</li>
+          <li>Cow worship; music and idol worship central to culture</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Most Important Exam Point</div>
+      <p>The Two-Nation Theory is not just a historical claim — it is the <em>ideological justification</em> for Pakistan's very existence. If an examiner asks "Why was Pakistan created?", your answer must center on the Two-Nation Theory and its logical conclusion: a separate homeland for Muslims.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. The Two-Nation Theory states that Muslims and Hindus are:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'They share the same land but the theory argues they are fundamentally different nations, not simply communities.')">A. Two different religious communities who can live together under one government.</button>
+          <button class="opt" onclick="ans(this,true,'Correct! The theory argues they are two completely distinct nations who need separate homelands.')">B. Two distinct nations with separate cultures, civilization, and history who need separate homelands.</button>
+          <button class="opt" onclick="ans(this,false,'The theory is much broader than just economic difference.')">C. Two groups with minor economic differences.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. Who gave the Two-Nation Theory its philosophical foundation in the famous 1930 Allahabad Address?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Sir Syed contributed earlier but the formal philosophical vision came from Iqbal in 1930.')">A. Sir Syed Ahmad Khan</button>
+          <button class="opt" onclick="ans(this,false,'Quaid-e-Azam was the political executor, not the philosopher of the theory.')">B. Quaid-e-Azam Mohammad Ali Jinnah</button>
+          <button class="opt" onclick="ans(this,true,'Exactly! Allama Iqbal\'s 1930 Allahabad Address gave the clearest philosophical vision of a separate Muslim state.')">C. Allama Iqbal</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T2-2: Partition of Bengal -->
+  <section class="topic" id="t2-2">
+    <div class="topic-hd">
+      <div class="marker m-sky">🗺️</div>
+      <h3>Partition of Bengal (1905)</h3>
+      <button class="check-btn" onclick="done(this,'t2-2')">✓</button>
+    </div>
+
+    <p>The Partition of Bengal in 1905 was one of the most significant political events in the history of the subcontinent. It served as a major catalyst that accelerated Muslim political consciousness.</p>
+
+    <div class="box def">
+      <div class="box-lbl">📖 Background — Why Bengal?</div>
+      <p>Bengal was the largest province of British India with a population of approximately 80 million. It was administratively ungovernable in its current size. The province had a majority Muslim population in the east (modern Bangladesh) and a Hindu majority in the west (modern West Bengal, India).</p>
+    </div>
+
+    <h4 style="color:var(--gold);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">📅 Key Events</h4>
+    <ul class="bl">
+      <li><strong>July 20, 1905:</strong> Lord Curzon (Viceroy of India) announced the partition. Bengal was divided into two provinces.</li>
+      <li><strong>East Bengal &amp; Assam:</strong> Majority Muslim population (31 million Muslims, 12 million Hindus). Capital: Dhaka. Muslims got their own province for the first time — benefiting enormously in education, jobs, and governance.</li>
+      <li><strong>West Bengal:</strong> Majority Hindu (54 million people). Capital: Calcutta. Hindu leaders and Congress were furious.</li>
+      <li><strong>Hindu Reaction — Swadeshi Movement:</strong> Hindus, led by Congress, launched the Swadeshi Movement — boycotting British goods and demanding reversal. They saw the partition as a "divide and rule" tactic by the British.</li>
+      <li><strong>Muslim Reaction:</strong> Most Muslims <em>welcomed</em> the partition as it created a Muslim-majority province. They saw it as an opportunity for Muslim progress.</li>
+      <li><strong>Annulment — December 12, 1911:</strong> Due to immense Hindu pressure, Lord Hardinge annulled the partition at the Delhi Durbar. Bengal was reunited — a devastating blow for Muslims who had benefited from the separate province.</li>
+    </ul>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Why This Matters for Pakistan's Ideology</div>
+      <p>The Partition of Bengal and its cancellation taught Muslims three crucial lessons: (1) The British would bow to Hindu pressure if it was organized enough. (2) Muslims needed their own organized political party to protect their interests — leading directly to the founding of AIML in 1906. (3) Muslims and Hindus had fundamentally opposing political interests — strengthening the case for the Two-Nation Theory.</p>
+    </div>
+
+    <div class="box note">
+      <div class="box-lbl">💡 Important Consequence</div>
+      <p>The annulment of Bengal's partition in 1911 was the <em>final proof</em> for many Muslims that they could never trust Congress (which was Hindu-dominated) or the British to protect Muslim interests. This political disillusionment was a key driver toward demanding Pakistan decades later.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Who ordered the Partition of Bengal in 1905?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,true,'Correct! Lord Curzon, the Viceroy of India, ordered the partition on July 20, 1905.')">A. Lord Curzon</button>
+          <button class="opt" onclick="ans(this,false,'Lord Hardinge was the one who CANCELLED the partition in 1911.')">B. Lord Hardinge</button>
+          <button class="opt" onclick="ans(this,false,'Lord Mountbatten was the last Viceroy who oversaw the final partition of India in 1947.')">C. Lord Mountbatten</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. The annulment of Bengal's partition in 1911 was a turning point because it:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'It was not celebrated by Muslims — it was the opposite; it was a huge disappointment.')">A. Was celebrated by Muslims as a step toward unity.</button>
+          <button class="opt" onclick="ans(this,true,'Exactly right! The annulment showed Muslims that without their own powerful political organization, British would always favor Hindus.')">B. Convinced Muslims they urgently needed their own organized political party (AIML) to protect their rights.</button>
+          <button class="opt" onclick="ans(this,false,'It actually strengthened, not weakened, the argument for Muslim political separatism.')">C. Weakened the Two-Nation Theory.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T2-3: Pakistan Resolution -->
+  <section class="topic" id="t2-3">
+    <div class="topic-hd">
+      <div class="marker m-gold">📜</div>
+      <h3>The Pakistan Resolution (Lahore Resolution 1940)</h3>
+      <button class="check-btn" onclick="done(this,'t2-3')">✓</button>
+    </div>
+
+    <p>The Pakistan Resolution of March 23, 1940 is the <strong>founding charter of Pakistan</strong>. It is the single most important document in Pakistani history — the moment the demand for Pakistan became official, formal, and irreversible.</p>
+
+    <div class="fml">
+      <div class="fml-head">📅 Fast Facts — The Pakistan Resolution</div>
+      <div class="fml-body">
+        Date: March 22–24, 1940 (Resolution formally passed March 23)<br>
+        Venue: Minto Park (now Iqbal Park), Lahore<br>
+        Organization: All-India Muslim League Annual Session<br>
+        Presided by: Quaid-e-Azam Mohammad Ali Jinnah<br>
+        Moved by: A. K. Fazlul Haq (Chief Minister of Bengal)<br>
+        Seconded by: Ch. Khaliquzzaman &amp; others
+        <div class="fml-note">Note: It was initially called the "Lahore Resolution" by friends and the "Pakistan Resolution" by opponents (mockingly). Muslims eventually adopted the name "Pakistan Resolution" with pride.</div>
+      </div>
+    </div>
+
+    <h4 style="color:var(--emerald);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">📋 Key Demands of the Resolution</h4>
+    <ul class="bl">
+      <li>The British government of India must be restructured as a <strong>federation</strong> of geographically contiguous units with fully autonomous and sovereign powers.</li>
+      <li>The Muslim majority areas of the subcontinent's North-West and East should be grouped to form <strong>"Independent States"</strong> (note: plural was used, which later became singular — Pakistan).</li>
+      <li>Adequate, effective, and mandatory safeguards for minorities (both in Muslim and non-Muslim states) must be guaranteed.</li>
+      <li>Any constitutional plan put forward by the British would be unacceptable to Muslims unless it conformed to these principles.</li>
+    </ul>
+
+    <div class="box def">
+      <div class="box-lbl">📖 Why March 23?</div>
+      <p>March 23 is celebrated as <strong>Pakistan Day</strong> every year. It commemorates the day in 1940 when Muslims formally declared their right to a separate homeland, and also the day in 1956 when Pakistan's first constitution came into force, making it an Islamic Republic.</p>
+    </div>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Analogy — The Lahore Resolution as a Declaration of Intent</div>
+      <p>Think of the Pakistan Resolution like a startup company formally filing its incorporation papers. Before 1940, Pakistan was just an idea (like an entrepreneur's dream). On March 23, 1940, it became a formal, legal, documented demand that could no longer be ignored. Seven years later, the "company" (Pakistan) actually launched on August 14, 1947.</p>
+    </div>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Critical Exam Point</div>
+      <p>Know: <strong>Who moved the resolution?</strong> A.K. Fazlul Haq (not Jinnah — Jinnah presided). <strong>Why 1940?</strong> By then it was clear the British were going to leave India, and Muslims needed to stake their claim before a Hindu-majority India was established. <strong>What was unique?</strong> It was the first time a formal, official, public demand for a separate Muslim state was made by a major political organization.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. Who formally moved the Pakistan Resolution on March 23, 1940?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Jinnah presided over the session but he did not move the resolution himself.')">A. Quaid-e-Azam Mohammad Ali Jinnah</button>
+          <button class="opt" onclick="ans(this,true,'Correct! A.K. Fazlul Haq, Chief Minister of Bengal, moved the resolution.')">B. A. K. Fazlul Haq</button>
+          <button class="opt" onclick="ans(this,false,'Allama Iqbal passed away in 1938, two years before the resolution.')">C. Allama Iqbal</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. The Lahore Resolution of 1940 is historically significant because it was:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'The actual constitution was drafted and adopted in 1956.')">A. Pakistan's first written constitution.</button>
+          <button class="opt" onclick="ans(this,true,'Exactly! It was the first formal, official demand for a separate Muslim homeland — the founding charter of the Pakistan movement.')">B. The first formal official demand for a separate Muslim homeland, making the Pakistan movement irreversible.</button>
+          <button class="opt" onclick="ans(this,false,'The AIML was founded in 1906, not at the 1940 session.')">C. The event at which the All-India Muslim League was founded.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T2-4: Simla Deputation -->
+  <section class="topic" id="t2-4">
+    <div class="topic-hd">
+      <div class="marker m-moon">🏛️</div>
+      <h3>The Simla Deputation (1906)</h3>
+      <button class="check-btn" onclick="done(this,'t2-4')">✓</button>
+    </div>
+
+    <p>The Simla Deputation of October 1, 1906 was a pivotal moment — the first time Muslims organized a formal, collective political delegation to present their demands directly to the British government. It was a major step in turning Muslim grievances into organized political action.</p>
+
+    <div class="fml">
+      <div class="fml-head">📅 Fast Facts — Simla Deputation</div>
+      <div class="fml-body">
+        Date: October 1, 1906<br>
+        Location: Simla (then summer capital of British India)<br>
+        Led by: Sir Aga Khan III (Head of Delegation)<br>
+        Met with: Lord Minto (Viceroy of India)<br>
+        Members: 35 Muslim leaders representing all regions<br>
+        Context: During discussions on constitutional reforms (Morley-Minto Reforms)
+      </div>
+    </div>
+
+    <h4 style="color:var(--gold);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">📋 Key Demands Presented</h4>
+    <ul class="bl">
+      <li><strong>Separate Electorates:</strong> Muslims demanded the right to vote in separate constituencies where only Muslims could vote for Muslim candidates. This would prevent their political voice from being drowned out by the Hindu majority.</li>
+      <li><strong>Weightage in Representation:</strong> Muslim representation in legislatures should be greater than their proportion of population, given their historical importance and the need to protect their unique interests.</li>
+      <li><strong>Reserved Seats:</strong> A specific number of seats in all legislatures and government services should be reserved for Muslims.</li>
+      <li><strong>Muslim University:</strong> Establishment of a Muslim university to provide higher education to Muslim youth.</li>
+      <li><strong>Protection in Services:</strong> Adequate representation of Muslims in government jobs and the civil service.</li>
+    </ul>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Why Separate Electorates Mattered</div>
+      <p>Imagine a school election where there are 70 Hindu students and 30 Muslim students, but every student votes together. The Muslim candidates would almost always lose — because in pure majority voting, 70 always beats 30. Separate electorates meant: Hindu students elect their representatives, Muslim students elect <em>theirs</em>. This guaranteed Muslim voices in government.</p>
+    </div>
+
+    <h4 style="color:var(--emerald);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">✅ Result and Significance</h4>
+    <p>The British government was receptive. <strong>Lord Minto agreed to the principle of separate electorates</strong>. This was a stunning political victory. The Morley-Minto Reforms of 1909 incorporated separate electorates for Muslims — a formal recognition by the British that Muslims were a separate political entity.</p>
+
+    <div class="box note">
+      <div class="box-lbl">💡 Connection to Pakistan's Ideology</div>
+      <p>The Simla Deputation is ideologically important because: (1) It was the first practical application of the Two-Nation Theory in politics. (2) It secured formal British recognition of Muslims as a distinct political community. (3) It directly led to the founding of the AIML just weeks later (December 1906). (4) Separate electorates became the model for the eventual demand for separate states.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. What was the most important demand of the Simla Deputation (1906)?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,true,'Correct! Separate electorates were the cornerstone demand — ensuring Muslim political representation independent of Hindu majority voting.')">A. Separate Electorates for Muslims</button>
+          <button class="opt" onclick="ans(this,false,'Independence from Britain was not the demand in 1906 — that came decades later.')">B. Complete independence from British rule</button>
+          <button class="opt" onclick="ans(this,false,'A Muslim army was not one of the demands of the Simla Deputation.')">C. A separate Muslim army</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. Who led the Simla Deputation delegation?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Quaid-e-Azam Jinnah was not yet the dominant Muslim leader in 1906.')">A. Quaid-e-Azam Jinnah</button>
+          <button class="opt" onclick="ans(this,true,'Correct! Sir Aga Khan III led the 35-member delegation to Lord Minto in Simla.')">B. Sir Aga Khan III</button>
+          <button class="opt" onclick="ans(this,false,'Sir Syed Ahmad Khan had already passed away in 1898, before the Simla Deputation.')">C. Sir Syed Ahmad Khan</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- T2-5: AIML -->
+  <section class="topic" id="t2-5">
+    <div class="topic-hd">
+      <div class="marker m-em">⭐</div>
+      <h3>Establishment of the All-India Muslim League (AIML, 1906)</h3>
+      <button class="check-btn" onclick="done(this,'t2-5')">✓</button>
+    </div>
+
+    <p>If the Two-Nation Theory is the idea and the Pakistan Resolution is the declaration, then the <strong>All-India Muslim League (AIML)</strong> is the organization that made Pakistan happen. Without it, ideology would have remained just words.</p>
+
+    <div class="fml">
+      <div class="fml-head">📅 Fast Facts — AIML</div>
+      <div class="fml-body">
+        Founded: December 30, 1906<br>
+        Location: Dhaka (now capital of Bangladesh)<br>
+        Session: Educational Conference of Muslims<br>
+        Proposed by: Nawab Salimullah Khan of Dhaka<br>
+        First President: Nawab Viqar-ul-Mulk (also Aga Khan III in some accounts)<br>
+        First Session: Presided by Nawab Viqar-ul-Mulk<br>
+        Context: Just 3 months after the successful Simla Deputation
+      </div>
+    </div>
+
+    <h4 style="color:var(--gold);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">📋 Objectives of the AIML (Original, 1906)</h4>
+    <ol class="nl">
+      <li><strong>Promote Loyalty to the British Crown:</strong> Initially, AIML sought to be a loyal organization working within the British system to secure Muslim rights — not a revolutionary party.</li>
+      <li><strong>Protect Muslim Political Rights:</strong> Safeguard the political rights and interests of Muslims in India, ensuring they were not marginalized in the new constitutional arrangements.</li>
+      <li><strong>Prevent Hostility Between Muslims and Other Communities:</strong> Foster good relations between Muslims, Hindus, and British authorities while protecting Muslim-specific interests.</li>
+      <li><strong>Represent Muslim Interests to the British Government:</strong> Act as the official voice of the Muslim community in all political negotiations with the colonial government.</li>
+    </ol>
+
+    <h4 style="color:var(--emerald);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">🔄 Evolution Under Jinnah</h4>
+    <p>The AIML underwent a revolutionary transformation when Quaid-e-Azam Mohammad Ali Jinnah took over its leadership. From a moderate organization focused on working within British India, Jinnah transformed the AIML into a mass movement demanding complete independence and a separate homeland.</p>
+
+    <div class="box eg">
+      <div class="box-lbl">🌍 Analogy</div>
+      <p>Think of the AIML like a startup that began as a <strong>consultancy firm</strong> (advising the British on Muslim issues, 1906) and eventually became a <strong>full independence movement</strong> (demanding a new country, 1940). Under Jinnah's leadership, the "business model" completely changed — and it succeeded beyond all expectations.</p>
+    </div>
+
+    <h4 style="color:var(--moon);font-family:var(--sans);font-size:1rem;margin:1.3rem 0 .5rem">🏆 Key Achievements of the AIML</h4>
+    <ul class="bl">
+      <li>Secured <strong>separate electorates</strong> for Muslims through the Morley-Minto Reforms (1909).</li>
+      <li>Signed the <strong>Lucknow Pact (1916)</strong> with Congress, the first major Hindu-Muslim political agreement.</li>
+      <li>Passed the <strong>Pakistan Resolution (1940)</strong> — formally demanding a separate homeland.</li>
+      <li>Won the <strong>1946 elections</strong> decisively on the slogan of Pakistan, proving Muslims backed the demand.</li>
+      <li>Successfully negotiated with the British, leading to the creation of <strong>Pakistan on August 14, 1947</strong>.</li>
+    </ul>
+
+    <div class="box exam">
+      <div class="box-lbl">🔴 Exam Tip — Common Question Types</div>
+      <p><strong>Q: Why was the AIML founded?</strong> — Because after the Simla Deputation, Muslims realized they needed a permanent, formal political organization (not a one-time delegation) to continuously represent their interests.<br><br>
+      <strong>Q: What role did the AIML play in Pakistan's creation?</strong> — It served as the organizational vehicle through which Muslim political aspirations (the ideology, the Two-Nation Theory) were translated into a concrete, successful political movement.</p>
+    </div>
+
+    <div class="quiz">
+      <h4>🧪 Checkpoint Quiz</h4>
+      <div class="quiz-q">
+        <div class="q-txt">1. The All-India Muslim League was founded in:</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'1906 was when Bengal was partitioned — the AIML was founded 1 year later.')">A. Lahore, 1905</button>
+          <button class="opt" onclick="ans(this,true,'Correct! The AIML was founded in Dhaka on December 30, 1906.')">B. Dhaka, 1906</button>
+          <button class="opt" onclick="ans(this,false,'The Pakistan Resolution was passed in Lahore in 1940, not the founding of AIML.')">C. Lahore, 1940</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">2. What was the original, initial stance of the AIML at its founding in 1906?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'Demanding immediate independence was NOT the stance of the newly founded, moderate AIML in 1906.')">A. Demand immediate independence from British rule.</button>
+          <button class="opt" onclick="ans(this,true,'Correct! The original AIML was a loyal, constitutional organization seeking Muslim rights within the British system — not a revolutionary body.')">B. Work loyally within the British system to protect Muslim political rights and interests.</button>
+          <button class="opt" onclick="ans(this,false,'The merger with Congress was never an AIML objective — they were rival organizations.')">C. Merge with the Indian National Congress to form a united front.</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+      <div class="quiz-q">
+        <div class="q-txt">3. The founding of the AIML was directly inspired by which recent event?</div>
+        <div class="opts">
+          <button class="opt" onclick="ans(this,false,'The Partition of Bengal happened in 1905 and was a contributing factor, but the direct inspiration was the Simla Deputation of 1906.')">A. The Partition of Bengal (1905)</button>
+          <button class="opt" onclick="ans(this,true,'Correct! The successful Simla Deputation of October 1906 showed Muslims the power of organized political action, directly leading to the AIML\'s founding just 3 months later.')">B. The success of the Simla Deputation (October 1906)</button>
+          <button class="opt" onclick="ans(this,false,'The Pakistan Resolution came 34 years AFTER the founding of AIML.')">C. The Pakistan Resolution (1940)</button>
+        </div>
+        <div class="q-fb"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Prepared for <strong>University of Malakand</strong> | BS Economics Program</p>
+    <p style="margin-top:.4rem">Islamiat — Ideology of Pakistan &amp; Two-Nation Theory · Interactive Self-Study Edition</p>
+  </footer>
+
+</div>
+</div>
+
+<script>
+/* ── STORAGE ── */
+const KEY = 'pak_ideology_v1';
+function save(){
+  const done=[];
+  document.querySelectorAll('.check-btn.checked').forEach(b=>{
+    const s=b.closest('.topic');if(s)done.push(s.id);
+  });
+  localStorage.setItem(KEY,JSON.stringify(done));
+}
+function load(){
+  try{
+    const d=JSON.parse(localStorage.getItem(KEY)||'[]');
+    d.forEach(id=>{
+      const s=document.getElementById(id);if(!s)return;
+      const b=s.querySelector('.check-btn');if(b)b.classList.add('checked');
+      document.querySelectorAll(`.nav-item[data-target="${id}"]`).forEach(n=>n.classList.add('done'));
+    });
+  }catch(e){}
+}
+
+/* ── HAMBURGER ── */
+const ham=document.getElementById('hamburger'),
+      sb=document.getElementById('sidebar'),
+      ov=document.getElementById('overlay');
+function openSB(){sb.classList.add('open');ov.classList.add('vis');ham.classList.add('open')}
+function closeSB(){sb.classList.remove('open');ov.classList.remove('vis');ham.classList.remove('open')}
+ham.addEventListener('click',()=>sb.classList.contains('open')?closeSB():openSB());
+ov.addEventListener('click',closeSB);
+
+/* ── NAV ITEMS ── */
+document.querySelectorAll('.nav-item[data-target]').forEach(item=>{
+  item.addEventListener('click',()=>{
+    const t=document.getElementById(item.dataset.target);
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    if(window.innerWidth<=768)closeSB();
+  });
+});
+
+/* ── INTERSECTION OBSERVER ── */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+      const id=e.target.id;
+      document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+      document.querySelectorAll(`.nav-item[data-target="${id}"]`).forEach(n=>n.classList.add('active'));
+    }
+  });
+},{threshold:0.12});
+document.querySelectorAll('.topic').forEach(t=>io.observe(t));
+
+/* ── PROGRESS ── */
+const tot=document.querySelectorAll('.topic').length;
+document.getElementById('totalN').textContent=tot;
+function updateProg(){
+  const n=document.querySelectorAll('.check-btn.checked').length;
+  const p=Math.round(n/tot*100);
+  document.getElementById('doneN').textContent=n;
+  document.getElementById('topPct').textContent=p+'%';
+  document.getElementById('topBar').style.width=p+'%';
+  const c=2*Math.PI*16;
+  document.getElementById('rFill').style.strokeDashoffset=c-(p/100)*c;
+  document.getElementById('rPct').textContent=p+'%';
+}
+
+/* ── DONE TOGGLE ── */
+function done(btn,id){
+  btn.classList.toggle('checked');
+  document.querySelectorAll(`.nav-item[data-target="${id}"]`).forEach(n=>n.classList.toggle('done'));
+  updateProg();save();
+}
+
+/* ── QUIZ ── */
+function ans(btn,correct,fb){
+  const opts=btn.parentElement.querySelectorAll('.opt');
+  opts.forEach(o=>o.disabled=true);
+  btn.classList.add(correct?'correct':'wrong');
+  const f=btn.parentElement.nextElementSibling;
+  f.textContent=(correct?'✅ ':'❌ ')+fb;
+  f.className='q-fb show '+(correct?'ok':'fail');
+}
+
+/* ── INIT ── */
+load();updateProg();
+</script>
+</body>
+</html>
